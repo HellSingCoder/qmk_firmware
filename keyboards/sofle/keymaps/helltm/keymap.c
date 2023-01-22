@@ -295,19 +295,24 @@ static void render_luna(int LUNA_X, int LUNA_Y) {
             oled_write_raw_P(run[abs(1 - current_frame)], ANIM_SIZE);
         }
     }
-
-    /* animation timer */
-    if (timer_elapsed32(anim_timer) > ANIM_FRAME_DURATION) {
-        anim_timer = timer_read32();
-        animate_luna();
-    }
-
+    
+    uint8_t sleeping = 0;
+    
     /* this fixes the screen on and off bug */
     if (current_wpm > 0) {
         oled_on();
         anim_sleep = timer_read32();
     } else if (timer_elapsed32(anim_sleep) > OLED_TIMEOUT) {
         oled_off();
+        sleeping = 1;
+    }
+    
+    /* animation timer */
+    if (timer_elapsed32(anim_timer) > ANIM_FRAME_DURATION) {
+        anim_timer = timer_read32();
+        if (!sleeping) {
+            animate_luna();
+        }    
     }
 }
 
