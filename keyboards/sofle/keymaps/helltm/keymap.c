@@ -54,11 +54,11 @@ const uint16_t PROGMEM nm_combo[] = {KC_N, KC_M, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
   [RT_LPRN] = COMBO(rt_combo, KC_LPRN),
-  [RT_LBRC] = COMBO(rt_combo, KC_LBRC),
-  [RT_LCBR] = COMBO(rt_combo, KC_LCBR),
-  [RT_RPRN] = COMBO(rt_combo, KC_RPRN),
-  [RT_RBRC] = COMBO(rt_combo, KC_RBRC),
-  [RT_RCBR] = COMBO(rt_combo, KC_RCBR)
+  [FG_LBRC] = COMBO(fg_combo, KC_LBRC),
+  [VB_LCBR] = COMBO(vb_combo, KC_LCBR),
+  [YU_RPRN] = COMBO(yu_combo, KC_RPRN),
+  [HJ_RBRC] = COMBO(hj_combo, KC_RBRC),
+  [NM_RCBR] = COMBO(nm_combo, KC_RCBR)
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
