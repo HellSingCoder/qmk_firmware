@@ -39,10 +39,12 @@ enum custom_keycodes {
 };
 
 enum combos {
-  AB_ESC,
-  JK_TAB,
-  QW_SFT,
-  SD_LAYER,
+  RT_LPRN,
+  FG_LBRC,
+  VB_LCBR,
+  YU_RPRN,
+  HJ_RBRC,
+  NM_RCBR,
 };
 
 const uint16_t PROGMEM rt_combo[] = {KC_R, KC_T, COMBO_END};
