@@ -38,6 +38,29 @@ enum custom_keycodes {
     KC_BSPC_DEL
 };
 
+enum combos {
+  AB_ESC,
+  JK_TAB,
+  QW_SFT,
+  SD_LAYER,
+};
+
+const uint16_t PROGMEM rt_combo[] = {KC_R, KC_T, COMBO_END};
+const uint16_t PROGMEM fg_combo[] = {KC_F, KC_G, COMBO_END};
+const uint16_t PROGMEM vb_combo[] = {KC_V, KC_B, COMBO_END};
+const uint16_t PROGMEM yu_combo[] = {KC_Y, KC_U, COMBO_END};
+const uint16_t PROGMEM hj_combo[] = {KC_H, KC_J, COMBO_END};
+const uint16_t PROGMEM nm_combo[] = {KC_N, KC_M, COMBO_END};
+
+combo_t key_combos[COMBO_COUNT] = {
+  [RT_LPRN] = COMBO(rt_combo, KC_LPRN),
+  [RT_LBRC] = COMBO(rt_combo, KC_LBRC),
+  [RT_LCBR] = COMBO(rt_combo, KC_LCBR),
+  [RT_RPRN] = COMBO(rt_combo, KC_RPRN),
+  [RT_RBRC] = COMBO(rt_combo, KC_RBRC),
+  [RT_RCBR] = COMBO(rt_combo, KC_RCBR)
+};
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /*
 * QWERTY
